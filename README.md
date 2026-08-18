@@ -1,9 +1,4 @@
 # Veridate — Frequently Asked Questions
-
-*Draft v7 — with reference screenshots*
-
-This draft is based on the Veridate web portal (Products, Production Runs, Check Scheme Templates, Production Lines, User Management, Change History), five training walkthroughs, and direct screenshots of the live portal. Screenshots below illustrate key screens referenced in the answers; not every question has a paired image.
-
 ---
 
 ## Getting Started, Licensing & Access
