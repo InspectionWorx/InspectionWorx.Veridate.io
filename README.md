@@ -1,7 +1,3 @@
----
-title: Veridate — Frequently Asked Questions
----
-
 # Veridate — Frequently Asked Questions
 
 *Draft v7 — with reference screenshots*
