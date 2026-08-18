@@ -1,9 +1,4 @@
 # Veridate — Frequently Asked Questions
-
-*Draft v7 — with reference screenshots*
-
-This draft is based on the Veridate web portal (Products, Production Runs, Check Scheme Templates, Production Lines, User Management, Change History), five training walkthroughs, and direct screenshots of the live portal. Screenshots below illustrate key screens referenced in the answers; not every question has a paired image.
-
 ---
 
 ## Getting Started, Licensing & Access
@@ -273,7 +268,7 @@ It has three tabs: **App users**, **Portal users**, and **Access log**. App user
 **What's in the Access log?**
 It's a login/logout history for the portal — separate from Change History. Each row shows a Timestamp, Action (Login successful, Login failed, or Logout), Email, Username, and IP address. It's filterable by User, Action, and date range, and has its own "Export access log as CSV" button.
 
-![User Management → Access log tab, showing login/logout history with IP addresses.](images/access_log.png)
+![User Management → Access log tab, showing login/logout history with IP addresses.](images/access_logv2.png)
 *User Management → Access log tab, showing login/logout history with IP addresses.*
 
 ### Help Centre & Support
