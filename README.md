@@ -286,13 +286,3 @@ It's a login/logout history for the portal — separate from Change History. Eac
 Links to external tutorial videos, plus FAQs that grow over time as users ask questions — the intent is that common questions get turned into FAQ entries so everyone benefits. There's also a Contact section for anything not covered there.
 
 ---
-
-## Not Yet Available (roadmap items — confirm before publishing)
-
-- **Wildcard/partial matching** for barcode and OCR checks (e.g. matching a fixed portion of a QR code while allowing the rest, like a pallet number, to vary) — in development, not yet released.
-- **Master data import/integration** — bulk-importing validated product/barcode data from other systems, or auto-populating fields by scanning a barcode, rather than typing fields in manually — planned, not in first release.
-- **Outer case / tray-level code checks** as a distinct feature — currently achievable via a standard barcode check, but deeper tray-and-label-specific functionality is a future enhancement.
-
-## Still to Cover
-
-- The mobile app UI itself — screenshots of starting a run, running a check, and the mid-run check list
