@@ -1,3 +1,15 @@
+---
+title: Veridate — Frequently Asked Questions
+---
+
+# Veridate — Frequently Asked Questions
+
+*Draft v7 — with reference screenshots*
+
+This draft is based on the Veridate web portal (Products, Production Runs, Check Scheme Templates, Production Lines, User Management, Change History), five training walkthroughs, and direct screenshots of the live portal. Screenshots below illustrate key screens referenced in the answers; not every question has a paired image.
+
+---
+
 ## Getting Started, Licensing & Access
 
 **What is Veridate?**
@@ -5,6 +17,9 @@ Veridate is a cloud-based (Microsoft Azure) quality inspection and compliance tr
 
 **How do I get set up as a new client?**
 A nominated person becomes your internal admin. Veridate sets your organisation up as a client, and that nominated person receives an invite email to create a password. From there they log in at the portal login page.
+
+![The portal login page — email and password, with a "Forgot password?" link.](images/login_page.png)
+*The portal login page — email and password, with a "Forgot password?" link.*
 
 **What's the difference between an "app user" and a "portal user"?**
 - **App users** use the mobile app on the factory floor to run checks. App user licences are limited (often starts around 10, adjustable based on your needs).
@@ -27,6 +42,9 @@ No — portal access is granular, built from individual roles you assign when in
 
 The account owner (the first Super Admin on the account) is a special case — that user's access can't be edited or deleted by anyone.
 
+![Portal Users tab, with the "Add portal user" role selection modal open.](images/portal_users_add_modal.png)
+*Portal Users tab, with the "Add portal user" role selection modal open.*
+
 **Can operators share a single phone or tablet?**
 Yes. A phone or tablet doesn't need to belong to one person — several operators can share the same device on a line, or even across multiple lines. Each operator still logs in individually with their own PIN before doing anything; the app times sessions out rather than staying logged in as one generic user, so every check is always tied to the specific person who performed it.
 
@@ -36,10 +54,13 @@ You can still get them a PIN. Email is used for sending the initial invite (whic
 **Is there a limit on how many products, images, or checks I can have?**
 No practical limit on any of these — products, images per product, or checks within a check scheme. App user seats are managed on a "Seats used / Seats available" basis (e.g. 2/10) via a "Manage seats" option, and can be increased if you need more. Portal users are unlimited — the "Add portal user" screen currently shows text implying it allocates a spare seat, but that's a known copy error slated to be corrected; portal users don't actually draw from a seat pool.
 
+![User Management → App users tab, showing seat usage (2/10).](images/app_users.png)
+*User Management → App users tab, showing seat usage (2/10).*
+
 **What devices and OS versions are supported?**
 The app runs natively on both iOS and Android, on phones and tablets, with the same look and functionality across platforms. Performance is optimised for the current version of iOS/Android plus the previous two versions — older devices aren't blocked, but performance is tuned around that recent range.
 
-## Data Security, Privacy & Retention
+### Data Security, Privacy & Retention
 
 **Who can see our data?**
 Only your own portal users can view and access your organisation's data — it's held in your own secured area of the Microsoft Azure environment. Neither InspectionWorx staff (Veridate's makers) nor any retailer partner (e.g. M&S) has visibility into your records; InspectionWorx only steps in for backend technical support if something goes wrong with the underlying infrastructure.
@@ -51,8 +72,14 @@ This is configurable to your own retention requirements (e.g. common industry be
 
 ## Products
 
+![The Products page (grid view) — each card shows status (Active/Inactive) and active production runs.](images/products_grid.png)
+*The Products page (grid view) — each card shows status (Active/Inactive) and active production runs.*
+
 **What does the "Active" / "Inactive" status on a product mean?**
 A product must be made **Active** before it can be used in the app to start a production run. You can create and fully configure a product — details, fields, images, date rules, check schemes — while it's still Inactive, then activate it once everything's confirmed. If required information is missing, you'll see a tooltip explaining what's needed and won't be able to activate it.
+
+![The same Products page in list view — same data (Product ID, name, status), different layout.](images/products_list.png)
+*The same Products page in list view — same data (Product ID, name, status), different layout.*
 
 **What are the two ways to create a new product?**
 - **From blank** — starts with just the product name and Product ID; every other field is created by you from scratch.
@@ -67,6 +94,9 @@ They store any product-specific information you want to reference later — e.g.
 **Can I add images to a product?**
 Yes — images can be uploaded and then referenced within check schemes (e.g. showing what a correctly sealed pack should look like), which is useful for guiding staff running checks in the app.
 
+![A product's custom fields (Field Name / Field Value) and Product/Packaging Images section.](images/product_fields_images.png)
+*A product's custom fields (Field Name / Field Value) and Product/Packaging Images section.*
+
 **How does the use-by / best-before date get calculated?**
 Date configuration on a product includes:
 - The **date format** to print.
@@ -74,6 +104,9 @@ Date configuration on a product includes:
 - **Rounding rules** — e.g. round up/down to the end of a month, or up/down to a specific day of the week (useful for products where retailers destock on set days).
 - **Concessions** — temporary date-calculation exceptions valid between a start and end date; can be set to single-use so they auto-deactivate after one production run.
 - **Date avoidance** — rules to avoid coding specific dates (e.g. Christmas Day), with a chosen effect on shelf life when that date would otherwise apply.
+
+![A product's Date configuration section — format, offset, rounding rules, concessions, date avoidance, and email alerts.](images/date_config.png)
+*A product's Date configuration section — format, offset, rounding rules, concessions, date avoidance, and email alerts.*
 
 **What if my product is made up of several other products, each with their own date code (a "component" product)?**
 There's a separate mode for this. Instead of an offset/rounding calculation, you flag the product as a component product and, during the production run, scan each individual component's own date code until all required components have been scanned. The system then calculates the final date automatically based on the shortest remaining life among the components you scanned.
@@ -99,6 +132,9 @@ Each image is uploaded with a name (e.g. "Front Of Pack," "Back Of Pack," "Pack 
 ---
 
 ## Check Schemes & Check Types
+
+![The Check Scheme Templates page — Start, Mid, and End templates, each with Manage/delete.](images/check_scheme_templates.png)
+*The Check Scheme Templates page — Start, Mid, and End templates, each with Manage/delete.*
 
 **What is a "Check Scheme"?**
 A check scheme is a named set of one or more individual checks, applied at a specific stage of a production run (Start, Mid, or End). Each individual check has a title, a question/prompt, an expected response, and — once run — an actual response.
@@ -128,6 +164,9 @@ When adding a check to a scheme, the check "Type" dropdown offers ten options:
 - **Text entry** — a manually typed value, as an alternative to OCR.
 - **Photo capture** — simply captures an image with no pass/fail logic, for keeping a permanent visual record.
 
+![The "Add a new check" modal, showing the full check-type dropdown and the corrective action toggle.](images/add_check_dropdown.png)
+*The "Add a new check" modal, showing the full check-type dropdown and the corrective action toggle.*
+
 **What does "corrective action" mean on a check?**
 It's a toggle on an individual check when you create it. Turning it on means that if the check fails (actual response doesn't match expected), a supervisor will be required to document what corrective action was taken, and that failure plus the corrective action will show up in the product's alerts section — along with triggering the alert email to the product's corrective-action address. Not every check needs this (e.g. data-capture-only checks like "how many people are on the line" typically don't).
 
@@ -154,6 +193,9 @@ It relates to interval-based (timed) Mid-run checks — the app shows a countdow
 
 ## Production Lines
 
+![The Production Lines page — each line has a name and a start-of-day time.](images/production_lines.png)
+*The Production Lines page — each line has a name and a start-of-day time.*
+
 **What is a production line, and why do I need to set them up?**
 A production line is simply a named entry in a list so it can be selected in the app when starting a production run. Each line also has its own **start-of-day time** — the point at which the "day" rolls over for date calculation purposes (commonly midnight, but can be set per line, e.g. to match shift changes or CIP schedules).
 
@@ -173,15 +215,23 @@ You can either continue and correct the specific check result, or restart the ru
 **How do timed Mid-run checks behave in the app?**
 If a Mid-run check is interval-based, the app shows a countdown to when it's due; the display changes colour once you're inside the "overdue" window if you haven't run it yet.
 
+> **Note:** the mobile app's own screens (starting a run, running a check, the mid-run check list) haven't been screenshotted yet — send those when available to illustrate this section.
+
 ---
 
 ## Production Runs, Reports & Corrective Actions
+
+![Product Reports list with a failed Mid check's "View report" panel open.](images/production_runs_failed_report.png)
+*Product Reports list with a failed Mid check's "View report" panel open.*
 
 **What do the different statuses in the reports list mean?**
 There are three: **Completed** (every check in the scheme passed), **Failed** (at least one check that failed had corrective action enabled on it), and **Completed with errors** (at least one check failed, but none of the failed checks had corrective action enabled). In other words, whether a scheme shows as Failed or Completed with errors depends on whether the specific check that failed was configured to require a corrective action, not on how many checks failed.
 
 **How do I see the details behind a check result?**
 Click into any row in Product Reports to open the **View report** panel. It shows the product, person, check scheme type and name, date/timing, and a breakdown of each individual check with its question, expected response, actual response, and a Success/Fail indicator. Where a check involved a photo capture, a thumbnail is shown and can be clicked to view the full-size image.
+
+![A full Start check scheme report — all checks passed, including a photo-capture check.](images/start_report_success.png)
+*A full Start check scheme report — all checks passed, including a photo-capture check.*
 
 **What does a failed check's corrective action entry actually contain?**
 When a check with corrective action enabled fails, the report shows: the expected vs. actual response, a "Corrective action" field confirming one was required, and a timestamped entry recording who logged it and what they wrote (e.g. "Wrong packaging on the line. Staff training planned.").
@@ -214,6 +264,9 @@ Every change made in the portal, split across four tabs: **Products**, **Product
 - **Users** — users added or deleted, plus edits to their type or roles (e.g. a user's access changing from App-only to both App and Portal, or a role like Super Admin being added or removed).
 - **Check Schemes** — changes to check schemes and individual checks on a product (e.g. a check's expected response changing, a whole check scheme being added), again showing old vs. new values.
 
+![Change History → Check Schemes tab, showing field-level before/after values.](images/change_history_checkschemes.png)
+*Change History → Check Schemes tab, showing field-level before/after values.*
+
 ---
 
 ## User Management (Portal Pages)
@@ -224,11 +277,22 @@ It has three tabs: **App users**, **Portal users**, and **Access log**. App user
 **What's in the Access log?**
 It's a login/logout history for the portal — separate from Change History. Each row shows a Timestamp, Action (Login successful, Login failed, or Logout), Email, Username, and IP address. It's filterable by User, Action, and date range, and has its own "Export access log as CSV" button.
 
-## Help Centre & Support
+![User Management → Access log tab, showing login/logout history with IP addresses.](images/access_log.png)
+*User Management → Access log tab, showing login/logout history with IP addresses.*
+
+### Help Centre & Support
 
 **What's in the Help Centre?**
 Links to external tutorial videos, plus FAQs that grow over time as users ask questions — the intent is that common questions get turned into FAQ entries so everyone benefits. There's also a Contact section for anything not covered there.
 
 ---
 
-Copyright InspectionWorx Ltd 2026 Veridate is a registered trademark of InspectionWorx Ltd
+## Not Yet Available (roadmap items — confirm before publishing)
+
+- **Wildcard/partial matching** for barcode and OCR checks (e.g. matching a fixed portion of a QR code while allowing the rest, like a pallet number, to vary) — in development, not yet released.
+- **Master data import/integration** — bulk-importing validated product/barcode data from other systems, or auto-populating fields by scanning a barcode, rather than typing fields in manually — planned, not in first release.
+- **Outer case / tray-level code checks** as a distinct feature — currently achievable via a standard barcode check, but deeper tray-and-label-specific functionality is a future enhancement.
+
+## Still to Cover
+
+- The mobile app UI itself — screenshots of starting a run, running a check, and the mid-run check list
